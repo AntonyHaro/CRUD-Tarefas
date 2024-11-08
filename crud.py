@@ -20,8 +20,16 @@ def excluir_tarefa(tarefa):
         print("Tarefa não encontrada!")
 
 
-# def editar_tarefa(resposta)
-
+def editar_tarefa(tarefa, valor):
+    i=0
+    for i, t in enumerate(tarefa, start=1):
+        if valor == i:
+            alterar = input("Como deseja renomear essa tarefa? ")
+            tarefa[i-1] = alterar
+            print(tarefa[i-1])
+            break
+    
+        
 def main():
     while True:
         print("Bem-vindo a sua lista de tarefas!")
@@ -53,7 +61,8 @@ def main():
             excluir_tarefa(tarefa)
         elif resposta == "5":
             print("Editando tarefas...")
-            
+            valor = int(input("Qual tarefa deseja alterar? "))
+            editar_tarefa(tarefa, valor)
         else:
             print("Opção inválida. Tente novamente.")
             main()
