@@ -7,6 +7,14 @@ def listar_tarefas(tarefa):
         for i, t in enumerate(tarefa, start=1):
             print(f"{i}. {t}")
 
+def pesquisar_tarefa(tarefa, search):
+    i=0
+    for i, t in enumerate (tarefa, start=1):
+        if search == t:
+            print(i,tarefa[i-1])
+    
+
+    
 def criar_tarefa(tarefa, tarefa_nova):
     tarefa.append(tarefa_nova)
     print("Tarefa adicionada com sucesso!")
@@ -26,7 +34,7 @@ def editar_tarefa(tarefa, valor):
         if valor == i:
             alterar = input("Como deseja renomear essa tarefa? ")
             tarefa[i-1] = alterar
-            print(tarefa[i-1])
+            print(i,tarefa[i-1])
             break
     
         
@@ -50,8 +58,9 @@ def main():
             print("Listando tarefas...")
             listar_tarefas(tarefa)
         elif resposta == "2":
+            search = input("Pesquisar tarefa: ")
             print("Pesquisando tarefas...")
-            # Pesquisar tarefas
+            pesquisar_tarefa(tarefa, search)       
         elif resposta == "3":
             print("Criando tarefas...")
             tarefa_nova = input("Digite uma nova tarefa: ")
