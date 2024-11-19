@@ -1,5 +1,6 @@
 tarefa = []
 
+// função para listar tarefas 
 def listar_tarefas(tarefa):
     if not tarefa:
         print("Nenhum regitro encontrado!")
